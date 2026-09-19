@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eilandrijk">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0f2230">
+  <meta name="description" content="Bouw, ruil en verover het eiland tegen 2 of 3 AI-tegenstanders.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <title>Eilandrijk</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <h1><span class="logo" aria-hidden="true"></span>Eilandrijk</h1>
+      <div class="top-actions">
+        <button id="btn-rules" class="ghost">Regels</button>
+        <button id="btn-new" class="ghost">Nieuw spel</button>
+      </div>
+    </header>
+    <main>
+      <section id="board-wrap">
+        <div id="status" role="status" aria-live="polite"></div>
+        <div id="board"></div>
+      </section>
+      <aside id="panel"></aside>
+    </main>
+    <div id="modal-root"></div>
+    <div id="toast" role="alert"></div>
+  </div>
+  <script src="js/topology.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    // Offline-ondersteuning (PWA); werkt alleen via https of localhost, anders stil overslaan.
+    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>
