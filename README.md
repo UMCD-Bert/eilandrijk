@@ -4,6 +4,8 @@ Hexagon-bordspel voor jou tegen **2 of 3 AI-tegenstanders**, in de browser. Het 
 
 ## Spelen
 
+**Live:** https://umcd-bert.github.io/eilandrijk/ (broncode: https://github.com/UMCD-Bert/eilandrijk). Elke wijziging die naar de `main`-branch gaat, staat na ongeveer een minuut online.
+
 - **Zonder installatie:** open `index.html` in de browser (dubbelklik op het bestand).
 - **Als app (iPad/iPhone):** zet de map op een https-adres (bijv. GitHub Pages), open het adres in Safari en kies Deel → *Zet op beginscherm*. De service worker (`sw.js`) bewaart dan alle bestanden voor offline gebruik.
 - **Als app (Mac/Chrome/Edge):** open het https-adres en kies *Installeer Eilandrijk* in de adresbalk.
